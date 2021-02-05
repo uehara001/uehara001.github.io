@@ -3,3 +3,13 @@ h1 {
   padding-bottom: 8px;
   border-bottom: 1px solid #ddd;
 }
+
+.btn {
+  background: skyblue;
+  color: #fff;
+  display: inline;
+  padding: 10px;
+  border-radius: 50%;
+  
+}
+
