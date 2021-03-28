@@ -1,0 +1,270 @@
+/* 共通--------------------- */
+html{
+  font-size: 100%;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    font-weight: normal;  
+}
+body {
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+}
+.wrapper{
+  width: 90vw;
+  margin: 0 auto;
+  
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+main {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+h2{
+  line-height: 5rem;
+}
+p{
+  margin-bottom: 34px;
+}
+/* ヘッダー --------------*/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+header > div{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff;
+ width: 90vw;
+}
+#logo img {
+  width: 180px;
+  margin-right: auto;
+}
+
+.menu-btn span {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 27px;
+  cursor: pointer;
+}
+.menu-btn span::after,.menu-btn span::before{
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 27px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  transition: transform .3s;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.menu-btn span::before {
+  bottom: 9px;
+}
+.menu-btn span::after {
+  top: 9px;
+}
+#menu-btn-check{
+  display: none;
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  transform: rotate(45deg) ;
+  
+  transform-origin: center;
+  bottom: 14px;
+  background-color: aliceblue;
+  z-index: 2;
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+  transform: rotate(-45deg) ;
+  transform-origin: center;
+  top: 14px;
+  background-color: aliceblue;
+  z-index: 2;
+}
+#menu-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  cursor: pointer;
+}
+#menu-btn-check:checked ~ .menu-btn #menu-bg{
+  display: block;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#menu-content a{
+  color:aliceblue;
+  text-decoration: none;
+  font-size: 15px;
+}
+#menu-content {
+  line-height: 2rem;
+  position: fixed;
+  top: 30px;
+  left: -10rem;
+  transition-duration: .3s ;
+  transition-delay: .1s;
+}
+#menu-btn-check:checked ~ #menu-content{
+  display: block;
+  left: 50px;
+  z-index: 2;
+}
+
+/* Prosucts----------------------------------------- */
+.products-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr );
+  gap: 40px 3%;
+}
+
+.products img{
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.products li {
+  line-height: 15px;}
+    
+.page-number span {
+      color: black;
+    }
+.page-number{
+      width: 64px;
+      display: flex;
+      margin: 50px auto;
+      justify-content: space-between;
+    }
+    
+
+/* フッター----------------------------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+.sns ul{
+  display: flex;
+}
+.sns li{
+  margin-right: 3rem;
+}
+footer small{
+  font-size: xx-small;
+}
+
+/* Item------------------ */
+.item {
+  display: flex;
+}
+.item div{
+  width: 340px;
+}
+
+.item dl {
+  display: flex;
+}
+.item img {
+  width: 400px;
+  height: fit-content;
+  margin-right: 65px;
+}
+.page-link{
+  width: fit-content;
+  margin: 34px auto;
+}
+/* About ------------*/
+.about {
+  max-width: 600px;
+}
+/* Company---------------- */
+.company dl {
+  border-bottom: solid 1px rgb(214, 214, 214);
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  padding: 1rem 0 1rem 5px;
+}
+.company dt{
+  width: 195px;
+}
+.company dl:nth-child(7) {
+  border-bottom: none;
+  margin-bottom: 2rem;
+}
+.company iframe{
+  position: relative;
+  filter: grayscale(1);
+  z-index: -1;
+  }
+
+/* @SP------------------ */
+@media (max-width:900px){
+  /* Products */
+  .products-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr );
+    gap: 40px 5%;
+  }
+  /* Item */
+  .item {
+    display: block;
+  }
+  .item div {
+    width: auto;
+  }
+  .item img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 34px 0;
+  }
+  /* Company */
+  .company dl{
+    display: block;
+  }
+  .company dt{
+    margin-bottom: 1rem;
+  }
+  .company iframe{
+    width:100%;
+  }
+  /* フッター---------- */
+  footer {
+    display: block;
+  }
+}
+
